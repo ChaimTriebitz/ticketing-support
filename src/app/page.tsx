@@ -1,10 +1,27 @@
+import Link from "next/link";
+import { FaTicketAlt } from "react-icons/fa";
+
+
 const HomePage = () => {
-   return (  
-      <div>
-         <h1 className="bg-amber-700">Welcome to the Home Page</h1>
-         <p>This is a simple Next.js application.</p>
-      </div>
+   return (
+      <main>
+         <h1 className="text-3xl font-bold underline">
+            Hello world!
+         </h1>
+         <Link
+            className="text-blue-500 hover:underline"
+            href='tickets'
+         >
+            Tickets
+         </Link>
+         <Link
+            href='tickets/new'
+            className="text-blue-500 hover:underline"
+         >
+            New Ticket
+         </Link>
+      </main>
    );
 }
- 
+
 export default HomePage;
