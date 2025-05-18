@@ -1,7 +1,8 @@
 "use client";
-import { createTicket } from "@/actions/tickets_actions";
+import { createTicket } from "@/actions/ticket";
 import { useRouter } from "next/navigation";
 import { useActionState, useEffect } from "react";
+import { toast } from "sonner";
 
 export default function NewTicketsPage() {
    const router = useRouter()
@@ -12,7 +13,8 @@ export default function NewTicketsPage() {
 
   useEffect(() => {
     if (state.success) {
-      router.push('/tickets')
+      toast.success("Ticket created successfully");
+      router.push("/tickets");
     }
   }, [state.success, router]);
 
